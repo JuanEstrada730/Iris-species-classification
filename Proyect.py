@@ -388,7 +388,6 @@ def page_data_overview(df: pd.DataFrame):
     st.dataframe(
         df[FEATURES].describe().round(4)
         .style
-        .background_gradient(cmap="Blues", axis=1)
         .format("{:.4f}"),
         use_container_width=True,
     )
@@ -515,7 +514,7 @@ def page_eda(df: pd.DataFrame):
         color_discrete_map=SPECIES_COLORS, symbol="Species Name",
         opacity=0.85, marginal_x="histogram", marginal_y="box",
     )
-    fig_2d.update_traces(marker_size=7)
+    fig_2d.update_traces(marker_size=7, selector=dict(type="scatter"))
     apply_layout(fig_2d, height=510)
     st.plotly_chart(fig_2d, use_container_width=True)
 
@@ -620,10 +619,7 @@ def page_model(df: pd.DataFrame, clf, scaler, metrics: dict, cm, feat_imp):
     per_df = pd.DataFrame(rows)
     st.dataframe(
         per_df.style
-            .format({"Precision": "{:.4f}", "Recall": "{:.4f}", "F1 Score": "{:.4f}"})
-            .background_gradient(
-                subset=["Precision", "Recall", "F1 Score"], cmap="Greens"
-            ),
+            .format({"Precision": "{:.4f}", "Recall": "{:.4f}", "F1 Score": "{:.4f}"}),
         use_container_width=True, hide_index=True,
     )
 
