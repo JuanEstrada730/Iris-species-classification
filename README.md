@@ -84,7 +84,13 @@ iris-classification/
 - Juan David Estrada
 
 ---
+## Live Demo
 
+[Open Dashboard on Streamlit Cloud](https://iris-species-classification-peajxhicoj5prdncwd2gwj.streamlit.app)
+
+## Video Presentation
+
+[Watch on Drive](https://drive.google.com/open?id=1svnM5amC45K6RZ2fwPs153cBN9wCmIQJ&usp=drive_fs)
 ## Dataset
 
 UCI Iris Dataset — loaded via `sklearn.datasets.load_iris`
